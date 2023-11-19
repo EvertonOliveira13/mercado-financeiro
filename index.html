@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado Financeiro</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="estilo/estilo-web-pc.css">
+    <link rel="stylesheet" href="estilo/estilo-mobile.css">
+</head>
+<body  onload="carregaData()">
+
+  <!---------Inicio-Header--------------->
+
+  <div>
+      <div class="header">
+        <a href="#corretoras" class="color-letra">Corretoras da bolsa</a>
+        <a href="#mercado-financeiro" class="color-letra">Mercado financeiro</a>
+        <a href="#historia-da-bolsa" class="color-letra">Historia da B3</a>
+        <h2 id="dataAtual" style="font-size: small;"></h2>
+      </div>
+    
+  </div>
+
+  <!---------Final-Header--------->
+
+  
+
+
+    <!---------------Crousel------------>
+    <section id="carousel-empresas">
+      <div id="carouselExampleCaptions" class="carousel slide">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner" id="corretoras">
+            <div class="carousel-item active">
+              <img src="img/xp.jpg" class="d-block w-100" alt="100">
+              <div class="carousel-caption d-none d-md-block">
+                <h5><a href="https://www.xpi.com.br/">Conhecer a corretora</a></h5>
+                <p style="color: orangered;">XP, onde sua vida financeira atinge o impossível </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="img/primo-rico.jpg" class="d-block w-100" alt="100">
+              <div class="carousel-caption d-none d-md-block">
+                <h5><a href="https://cadastro.rico.com.vc/">Conhecer a corretora</a></h5>
+                <p style="color: orangered;">Afinal, qual o efeito do tempo nos investimentos?</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="img/toro.jpg" class="d-block w-100" alt="100">
+              <div class="carousel-caption d-none d-md-block">
+                <h5><a href="https://www.toroinvestimentos.com.br/">Conhecer a corretora</a></h5>
+                <p style="color: orangered;">Mais resultados, mais proximidade, mais segurança com custo zero</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+      <!---------------Crousel------------>
+    </section>
+
+    <h1>Mercado Financeiro (Brasil)</h1>
+
+    <section class="bloco-principal" id="mercado-financeiro">
+        <!--incio-section-principais-mercados-->
+        <section class="principais-mercados">
+            <h3>Principais indices do Brasil(em reais)</h3>
+    
+            <div id="moedaContainer"></div>
+            
+        </section>
+        <!--final-section-principais-mercados-->
+
+        <!--Form para trazer informacoes de cotação de apenas uma moeda em relação a outra-->
+        <section class="moedas">
+            <div class="taxas-brasil">
+                <h3>Cotar moeda especifica </h3>
+                <div id="cotarMoeda" class="cotarMoeda">
+
+
+                    <select id="currencySelect">
+                          <!-- Options will be dynamically added here -->
+                      
+                    </select>
+                    
+                    <br>
+
+                    <button id="enviar" onclick="cotarMoeda()" class="botaoMoeda">Cotar moeda <i class="bi bi-search"></i></button>
+
+                    <h2 id="tituloMoedaCotada"></h2>
+                    <p id="precoMoedaCotada"></p>
+                    
+
+                </div>
+            </div>
+
+            <!----
+            <div class="converter-moedas">
+                <h3>Conversor de moedas</h3>
+            </div>
+            -->
+
+        </section>
+    </section>
+    <section id="historia-da-bolsa">
+
+        <h1>Historia da bolsa de valores</h1>
+
+        <div id="materia">
+          <p  class="materia-texto">Quando se fala em bolsa de valores, em geral, a bolsa norte-americana de Nova York costuma ser a grande referência, uma vez que ela é a maior do mundo e movimenta trilhões de dólares. Mas o Brasil também conta com sua própria bolsa de valores, conhecida como B3. O nome faz referência às iniciais das palavras Brasil, bolsa e balcão.
+
+            Em 2017, quando surgiu com o formato atual, a B3 foi considerada a quinta maior bolsa de mercado de capitais e financeiro do mundo. Atualmente, ela é a oitava maior do mundo em capitalização e tem um valor de mercado de 931 bilhões de dólares, o que a torna extremamente atrativa para quem quer investir.
+            
+            
+            
+            
+            História da B3
+            A B3 foi originalmente fundada em 23 de agosto de 1890 por Emílio Rangel Pestana com o nome de Bolsa Livre. O empresário oferecia serviços até então inéditos, como a compra e venda de títulos e a intermediação em operações bancárias.
+            
+            Um ano depois, a bolsa acabou sendo fechada por conta das políticas econômicas adotadas na época, que geraram uma hiperinflação e um surto especulativo, mas foi reaberta em 1895 com o nome de Bolsa de Fundos Públicos de São Paulo.
+            
+            Já em 1935, a bolsa novamente passou por reformulações e foi rebatizada como Bolsa de Valores de São Paulo (Bovespa), como ficou mais conhecida até 2017.
+            
+            Na década de 60, cada estado contava com sua própria bolsa. Inicialmente, elas eram controladas por secretarias estaduais, mas depois se tornaram associações independentes com autonomia em suas operações. Até 1970, a Bolsa de Valores do Rio de Janeiro era considerada a mais importante do país, mas uma crise econômica neste ano fez com que a bolsa de São Paulo ganhasse mais força.
+            
+            Em 2000, as duas principais bolsas (São Paulo e Rio de Janeiro) começaram um processo de unificação com as nove bolsas brasileiras ainda existentes na época. A então Bovespa cuidaria das ações, enquanto a bolsa do Rio ficaria responsável pelos títulos públicos. Essa centralização ajudou a fortalecer as operações e mostrou um amadurecimento do mercado brasileiro, com procedimentos e regras mais claras e organizadas. Pelos anos seguintes, as duas foram as principais bolsas brasileiras.
+            
+            Em 2007, a Bovespa realizou sua abertura de capital, o IPO e em 2008 se fundiu à Bolsa de Mercadorias e Futuros (BM&F), passando a ser chamada BM&F Bovespa.
+            
+            Uma década depois, em março de 2017, às vésperas de comemorar cinquenta anos da criação do Índice Bovespa, o Ibovespa, a BM&F Bovespa realizou a fusão com a Central de Custódia e de Liquidação Financeira de Títulos (Cetip), uma sociedade civil brasileira sem fins lucrativos que disponibiliza sistemas eletrônicos de custódia, registro de operações e liquidação financeira no mercado de títulos públicos e privados, sendo finalmente rebatizada para B3, sigla para Brasil, Bolsa e Balcão.
+            
+            Qual a função da B3?
+            De forma geral, podemos dizer que as bolsas de valores organizam o mercado de compra e venda de ações, criando um ambiente onde as transações podem ocorrer de forma transparente. Além disso, as bolsas controlam as empresas que podem participar ou não das negociações.
+            
+            Uma das formas de entender o papel da B3 é com a abertura de capital de empresas (IPO). Se uma organização precisa de recursos financeiros, ela pode pegar um empréstimo no banco, ou abrir seu capital, o que significa permitir que outras pessoas comprem ações da empresa e se tornem sócias minoritários.
+            
+            Nesse sentido, a B3 atua como um grande banco que facilita operações para empresas brasileiras e investidores, garantindo que todas as transações sejam claras e ocorram conformes às regras.
+            
+            Planejador financeiro e sócio fundador da plataforma MeuConsultorFinanceiro.com, Afranio Alves explica que a bolsa de valores pode ser comparada com um grande supermercado. “É um lugar onde você tem acesso a oportunidades de investimento em ativos de diversas características. Cada país conta com sua própria bolsa”, esclarece.
+            
+            É importante para o país ter um bolsa própria porque o mercado de capitais se torna mais transparente e regulado para as negociações. Consequentemente, isso torna o acesso mais igualitário para quem quer se aventurar pelo mercado financeiro, seja o grande investidor, sejam pessoas ainda iniciantes.
+            
+            O que é comercializado na B3?
+            Mercado de ações
+            Atualmente, cerca de 340 empresas estão listadas na B3. Todas elas disponibilizam suas ações para serem negociadas pela bolsa. Assim, investidores se tornam acionistas dessas organizações comprando fatias da empresa.
+            
+            Adquirindo partes para si, os investidores passam a acompanhar a valorização ou desvalorização de seus ativos. Para facilitar todo o processo, a B3 também divide todas essas empresas em diversos setores, como:
+            
+            Bens Industriais
+            Consumo Cíclico
+            Consumo não Cíclico
+            Financeiro e Outros
+            Materiais Básicos
+            Petróleo, Gás e Biocombustíveis
+            Saúde
+            Tecnologia da Informação
+            Telecomunicações
+            Utilidade Pública
+            
+            Dessa forma, investidores e traders interessados em apenas um setor da economia podem fazer comparativos de forma mais fácil e rápida.
+            
+            Outros ativos
+            Além de todo o mercado de ações,também é possível encontrar na B3 outros ativos que foram reunidos com a fusão entre BM&F Bovespa e Cetip, entre eles:
+            
+            Ativos de Renda fixa públicos e privados e cotas de fundos: o que inclui papéis do Tesouro Direto, Letras de Crédito Imobiliário (LCI), Letras de Crédito do Agronegócio (LCA), fundos de investimento, entre outros.
+            Derivativos: instrumentos econômicos cujos valores finais derivam, de forma total ou parcial, dos valores de outros títulos, como moedas e juros. Na B3, são negociados os derivativos de balcão e os derivativos listados.
+            Mercados à vista, de renda variável, ouro e câmbio: nesse grupo, são realizadas transações de compra e venda de ativos (ações, ouro, câmbio, etc.), cujos valores são estabelecidos em pregão com base na oferta e na demanda.</p>
+          <img id="img-materia" src="img/b3.jpg">
+        </div>
+
+    </section>
+
+    <footer>
+      <h2>BOLSA DE VALORES DO BRASIL (B3)</h2>
+      <div class="contato">
+        <div class="integrantes">
+            <img src="img/thiago.jpeg">
+            <div class="contatoPessoal">
+                
+                <h4>Thiago Alves</h4>
+                <a href="https://instagram.com/t_alves85?utm_source=qr&igshid=YzU1NGVlODEzOA=="><i class="bi bi-instagram"></i></a>
+                
+
+            </div>
+        </div>
+
+        <div class="integrantes">
+            <img src="img/everton.jpeg">
+            <div class="contatoPessoal">
+                
+                <h4>Everton Oliveira</h4>
+                <a href="https://instagram.com/everton_s_oliveira?utm_source=qr&igshid=MThlNWY1MzQwNA=="><i class="bi bi-instagram"></i></a>
+                
+
+            </div>
+        </div>
+
+        <div class="integrantes">
+            <img src="img/joao.jpeg">
+            <div class="contatoPessoal">
+                
+                <h4>João Antônio</h4>
+                <a href="https://instagram.com/joaoantonio_desouza?igshid=OGQ5ZDc2ODk2ZA=="><i class="bi bi-instagram"></i></a>
+                
+
+            </div>
+        </div>
+    </div>
+    </footer>
+
+    
+
+    <script src="js/scriptcarregadata.js"></script>
+    <script src="js/scriptfinancas.js"></script>
+</body>
+</html>

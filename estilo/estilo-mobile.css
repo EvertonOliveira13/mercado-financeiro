@@ -1,0 +1,81 @@
+@media only screen and (max-width: 600px) {
+
+    .bloco-principal{
+        display: block;
+        width: 100%;
+        height: auto;
+        margin-bottom: 3%;
+    }
+    .principais-mercados{
+
+          
+        padding: 0;
+        width: 100%;
+        height: 50vh;
+        border: solid 1px #1c1c1c;
+        border-radius: 15px;
+        margin-left: 0%;
+       
+    }
+    .header{
+        background-color: #1c1c1c;
+        display: block;
+        width: 100%;
+        align-items: center;
+        height: 50px;
+        position: fixed;
+        padding: 10px;
+        z-index: 1;
+    
+    }
+
+    .contato{
+        width: 80%;
+        display: block;
+        margin: auto;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        background: #363636;
+    }
+
+    #materia{
+        width: 100%;
+        padding: 2%;
+        display: block;
+    }
+
+    .taxas-brasil{
+        width: 100%;
+        height: 49%;
+        border: solid 1px #1c1c1c;
+        margin-bottom: 2%;
+        margin-top: 2%;
+        border-radius: 15px;
+        margin-left: 0;
+        
+        
+    }
+    .botaoMoeda{
+        margin: auto;
+        margin-top: 5px;
+        text-align: center;
+        background: #00FF7F;
+        width: 50%;
+        height: 10%;
+        border-radius: 10px;
+        border: none;
+        color: #fff;
+        padding: 10px;
+    }
+
+    #img-materia{
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        padding: 10px;
+        
+    }
+
+
+}
